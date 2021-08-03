@@ -21,15 +21,15 @@ namespace ShapedCharges
 
     public class DirectedExplosion : Explosion
     {
-        public override void StartExplosion(SoundDef explosionSound, List<Thing> ignoredThings)
+        public virtual void StartExplosion(IntVec3 vector, SoundDef explosionSound, List<Thing> ignoredThings)
         {
-            
+            base.StartExplosion(explosionSound, ignoredThings);
         }
     }
 
     public class DirectedExplosion_DamageWorker : DamageWorker
     {
-        public virtual IEnumerable<IntVec3> DirectionalExplosionCellsToHit(IntVec3 vector, IntVec3 center, Map map, float radius,
+        public static IEnumerable<IntVec3> DirectionalExplosionCellsToHit(IntVec3 vector, IntVec3 center, Map map, float radius,
             IntVec3? needLOSToCell1 = null, IntVec3? needLOSToCell2 = null)
         {
             List<IntVec3> myOpenCells = new List<IntVec3>(); //note: openCells is private
@@ -82,7 +82,7 @@ namespace ShapedCharges
         {
             return new IntVec3(vecIn.z, vecIn.y, vecIn.x);
         }
-        public virtual List<IntVec3> TriangularPattern(float radius, IntVec3 vec)
+        public static List<IntVec3> TriangularPattern(float radius, IntVec3 vec)
         {
             List<IntVec3> pattern = new List<IntVec3>();
             for(int i = 0; i < radius; ++i)
