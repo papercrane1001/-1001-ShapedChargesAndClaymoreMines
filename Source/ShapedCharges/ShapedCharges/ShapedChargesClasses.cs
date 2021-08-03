@@ -12,7 +12,10 @@ namespace ShapedCharges
 {
     public class DirectedExplosion : Explosion
     {
-
+        public override void StartExplosion(SoundDef explosionSound, List<Thing> ignoredThings)
+        {
+            
+        }
     }
 
     public class DirectedExplosion_DamageWorker : DamageWorker
