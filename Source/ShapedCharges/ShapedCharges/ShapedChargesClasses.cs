@@ -10,6 +10,15 @@ using UnityEngine;
 
 namespace ShapedCharges
 {
+    public class Projectile_DirectedExplosive : Projectile_Explosive
+    {
+        protected override void Explode()
+        {
+            //base.Explode();
+
+        }
+    }
+
     public class DirectedExplosion : Explosion
     {
         public override void StartExplosion(SoundDef explosionSound, List<Thing> ignoredThings)
