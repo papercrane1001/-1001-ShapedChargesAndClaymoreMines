@@ -176,13 +176,13 @@ namespace ShapedCharges
         }
     }
 
-    public class DirectedExplosion : Explosion
-    {
-        public virtual void StartExplosion(IntVec3 vector, SoundDef explosionSound, List<Thing> ignoredThings)
-        {
-            base.StartExplosion(explosionSound, ignoredThings);
-        }
-    }
+    //public class DirectedExplosion : Explosion
+    //{
+    //    public virtual void StartExplosion(IntVec3 vector, SoundDef explosionSound, List<Thing> ignoredThings)
+    //    {
+    //        base.StartExplosion(explosionSound, ignoredThings);
+    //    }
+    //}
 
     public class DirectedExplosion_DamageWorker : DamageWorker
     {

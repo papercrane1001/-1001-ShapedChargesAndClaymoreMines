@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef Name="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>ShapedCharge</defName>
+		<label>shaped charge</label>
+		<thingClass>ShapedCharges.Building_ShapedCharge</thingClass>
+		<graphicData>
+			<texPath>Things/Building/ShapedCharge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>	
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToMake>100</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>An explosive shaped to blast in only one direction.</description>
+		<comps>
+			<li Class="
+
+
+
+</Defs>
