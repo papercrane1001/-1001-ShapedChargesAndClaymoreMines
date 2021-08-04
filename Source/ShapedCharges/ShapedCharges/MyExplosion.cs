@@ -13,10 +13,10 @@ namespace ShapedCharges
 {
 	public class MyExplosion : Explosion
 	{
-        public MyExplosion(Explosion baseExplosion)
-        {
+        //public MyExplosion()
+        //{
             
-        }
+        //}
 
         // Token: 0x060017D1 RID: 6097 RVA: 0x0008EE30 File Offset: 0x0008D030
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -71,9 +71,12 @@ namespace ShapedCharges
             //    this.AddCellsNeighbors(this.cellsToAffect);
             //}
             this.damType.Worker.ExplosionStart(this, this.cellsToAffect);
+            Log.Message("Point74");
             this.PlayExplosionSound(explosionSound);
             FleckMaker.WaterSplash(base.Position.ToVector3Shifted(), base.Map, this.radius * 6f, 20f);
+            Log.Message("Point77");
             this.cellsToAffect.Sort((IntVec3 a, IntVec3 b) => this.GetCellAffectTick(b).CompareTo(this.GetCellAffectTick(a)));
+            Log.Message("Point79");
             RegionTraverser.BreadthFirstTraverse(base.Position, base.Map, (Region from, Region to) => true, delegate (Region x)
             {
                 List<Thing> allThings = x.ListerThings.AllThings;
@@ -252,36 +255,37 @@ namespace ShapedCharges
             this.damType.soundExplosion.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
         }
 
-        // Token: 0x060017DC RID: 6108 RVA: 0x0008F5B4 File Offset: 0x0008D7B4
-        //private void AddCellsNeighbors(List<IntVec3> cells)
-        //{
-        //    Explosion.tmpCells.Clear();
-        //    this.addedCellsAffectedOnlyByDamage.Clear();
-        //    for (int i = 0; i < cells.Count; i++)
-        //    {
-        //        Explosion.tmpCells.Add(cells[i]);
-        //    }
-        //    for (int j = 0; j < cells.Count; j++)
-        //    {
-        //        if (cells[j].Walkable(base.Map))
-        //        {
-        //            for (int k = 0; k < GenAdj.AdjacentCells.Length; k++)
-        //            {
-        //                IntVec3 intVec = cells[j] + GenAdj.AdjacentCells[k];
-        //                if (intVec.InBounds(base.Map) && Explosion.tmpCells.Add(intVec))
-        //                {
-        //                    this.addedCellsAffectedOnlyByDamage.Add(intVec);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    cells.Clear();
-        //    foreach (IntVec3 item in Explosion.tmpCells)
-        //    {
-        //        cells.Add(item);
-        //    }
-        //    Explosion.tmpCells.Clear();
-        //}
+        //Token: 0x060017DC RID: 6108 RVA: 0x0008F5B4 File Offset: 0x0008D7B4
+        private void AddCellsNeighbors(List<IntVec3> cells)
+        {
+            List<IntVec3> tmp = new List<IntVec3>();
+            //Explosion.tmpCells.Clear();
+            this.addedCellsAffectedOnlyByDamage.Clear();
+            for (int i = 0; i < cells.Count; i++)
+            {
+                tmp.Add(cells[i]);
+            }
+            for (int j = 0; j < cells.Count; j++)
+            {
+                if (cells[j].Walkable(base.Map))
+                {
+                    for (int k = 0; k < GenAdj.AdjacentCells.Length; k++)
+                    {
+                        IntVec3 intVec = cells[j] + GenAdj.AdjacentCells[k];
+                        if (intVec.InBounds(base.Map))
+                        {
+                            this.addedCellsAffectedOnlyByDamage.Add(intVec);
+                        }
+                    }
+                }
+            }
+            cells.Clear();
+            foreach (IntVec3 item in tmp)
+            {
+                cells.Add(item);
+            }
+            tmp.Clear();
+        }
 
         // Token: 0x060017DD RID: 6109 RVA: 0x0008F6C8 File Offset: 0x0008D8C8
         private bool ShouldCellBeAffectedOnlyByDamage(IntVec3 c)

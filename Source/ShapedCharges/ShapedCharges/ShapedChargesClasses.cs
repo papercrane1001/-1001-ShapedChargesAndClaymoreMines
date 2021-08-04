@@ -85,11 +85,21 @@ namespace ShapedCharges
             //ThingMaker.MakeThing(new ThingDef())
             ThingDef def = new ThingDef();
             //def.
-            Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map, WipeMode.Vanish);
-            MyExplosion myExplosion = (MyExplosion)GenSpawn.Spawn(
-                new ThingDef()
+            //Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map, WipeMode.Vanish);
+            //MyExplosion myExplosion = (MyExplosion)GenSpawn.Spawn(
+            //new ThingDef()
             //MyExplosion explosion CloneAnd
             //MyExplosion myExplosion = ()
+            Log.Message("line93");
+            MyExplosion test = (MyExplosion)Activator.CreateInstance(typeof(MyExplosion));
+            Log.Message("line94");
+            test.def = new ThingDef();
+            //Log.Message(test.def.ToString());
+            Log.Message("line95");
+            MyExplosion explosion = (MyExplosion)GenSpawn.Spawn(test, center, map, WipeMode.Vanish);
+            Log.Message("line97");
+
+
             
             IntVec3? needLOSToCell = null;
             IntVec3? needLOSToCell2 = null;
