@@ -27,9 +27,10 @@ namespace ShapedCharges
         protected void Command_Detonate()
         {
 
-
-            GetComp<CompDirectedExplosive>().StartWick();
-
+            Log.Message("Point4");
+            //GetComp<CompDirectedExplosive>().StartWick();
+            GetComp<CompDirectedExplosive>().Detonaate(Map);
+            //Log.Message("Point1");
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)

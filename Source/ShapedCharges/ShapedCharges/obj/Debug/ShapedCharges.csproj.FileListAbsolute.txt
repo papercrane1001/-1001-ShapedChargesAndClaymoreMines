@@ -3,4 +3,4 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesA
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Source\ShapedCharges\ShapedCharges\obj\Debug\ShapedCharges.csproj.AssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Source\ShapedCharges\ShapedCharges\obj\Debug\ShapedCharges.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Source\ShapedCharges\ShapedCharges\obj\Debug\ShapedCharges.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Source\ShapedCharges\ShapedCharges\obj\Debug\ShapedCharges.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Assemblies\ShapedCharges.dll

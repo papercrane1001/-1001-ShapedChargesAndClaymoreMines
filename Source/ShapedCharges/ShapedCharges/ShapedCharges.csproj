@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Building_ShapedCharge.cs" />
     <Compile Include="CompDirectedExplosive.cs" />
+    <Compile Include="CompProperties_DirectedExplosive.cs" />
     <Compile Include="MyExplosion.cs" />
     <Compile Include="MyExtensions.cs" />
     <Compile Include="ShapedChargesClasses.cs" />

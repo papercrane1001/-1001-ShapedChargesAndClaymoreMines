@@ -13,13 +13,14 @@ namespace ShapedCharges
 	public class CompDirectedExplosive : CompExplosive
 	{
 		//protected override void Detonate()
-		protected void Detonate(Map map, bool ignoreUnspawned = false)
+		public void Detonaate(Map map, bool ignoreUnspawned = false)
 		{
+			Log.Message("Point5");
 			if (!ignoreUnspawned && !this.parent.SpawnedOrAnyParentSpawned)
 			{
 				return;
 			}
-			CompProperties_Explosive props = this.Props;
+			CompProperties_DirectedExplosive props = (CompProperties_DirectedExplosive)this.Props;
 			float num = this.ExplosiveRadius();
 			if (props.explosiveExpandPerFuel > 0f && this.parent.GetComp<CompRefuelable>() != null)
 			{

@@ -62,7 +62,7 @@ namespace ShapedCharges
 
             this.cellsToAffect.AddRange(
                 DirectedExplosion_DamageWorker.DirectionalExplosionCellsToHit(vector, Position, Map, radius, needLOSToCell1, needLOSToCell2));
-            
+            Log.Message("Point2");
             //if (this.applyDamageToExplosionCellsNeighbors)
             //{
             //    this.AddCellsNeighbors(this.cellsToAffect);

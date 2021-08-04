@@ -29,8 +29,8 @@
 		<tickerType>Normal</tickerType>
 		<description>An explosive shaped to blast in only one direction.</description>
 		<comps>
-			<li Class="CompProperties_Explosive">
-				<explosiveRadius>4.9</explosiveRadius>
+			<li Class="ShapedCharges.CompProperties_DirectedExplosive">
+				<explosiveRadius>10.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
 			</li>
 		</comps>

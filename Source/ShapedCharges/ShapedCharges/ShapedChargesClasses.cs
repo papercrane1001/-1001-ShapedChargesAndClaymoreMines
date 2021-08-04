@@ -62,6 +62,7 @@ namespace ShapedCharges
             ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1, 
             float chanceToStartFire = 0f, bool damageFalloff = false, float? direction = null, List<Thing> ignoredThings = null)
         {
+            Log.Message("Point1");
             if (map == null)
             {
                 Log.Warning("Tried to do explosion in a null map.");
@@ -193,6 +194,7 @@ namespace ShapedCharges
         public static IEnumerable<IntVec3> DirectionalExplosionCellsToHit(IntVec3 vector, IntVec3 center, Map map, float radius,
             IntVec3? needLOSToCell1 = null, IntVec3? needLOSToCell2 = null)
         {
+            Log.Message("Point3");
             List<IntVec3> myOpenCells = new List<IntVec3>(); //note: openCells is private
             List<IntVec3> myadjWallCells = new List<IntVec3>();
             //IntVec3 test = new IntVec3(0, 0, 0);
