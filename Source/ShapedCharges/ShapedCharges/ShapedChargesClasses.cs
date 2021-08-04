@@ -82,8 +82,13 @@ namespace ShapedCharges
             {
                 armorPenetration = (float)damAmount * 0.015f;
             }
-
-            MyExplosion explosion = (MyExplosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map, WipeMode.Vanish);
+            //ThingMaker.MakeThing(new ThingDef())
+            ThingDef def = new ThingDef();
+            //def.
+            Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map, WipeMode.Vanish);
+            MyExplosion myExplosion = (MyExplosion)GenSpawn.Spawn(
+                new ThingDef()
+            //MyExplosion explosion CloneAnd
             //MyExplosion myExplosion = ()
             
             IntVec3? needLOSToCell = null;

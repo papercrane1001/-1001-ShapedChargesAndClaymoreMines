@@ -13,7 +13,10 @@ namespace ShapedCharges
 {
 	public class MyExplosion : Explosion
 	{
-        
+        public MyExplosion(Explosion baseExplosion)
+        {
+            
+        }
 
         // Token: 0x060017D1 RID: 6097 RVA: 0x0008EE30 File Offset: 0x0008D030
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
