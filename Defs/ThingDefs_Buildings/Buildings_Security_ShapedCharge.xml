@@ -29,8 +29,16 @@
 		<tickerType>Normal</tickerType>
 		<description>An explosive shaped to blast in only one direction.</description>
 		<comps>
-			<li Class="
-
-
-
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>4.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+			</li>
+		</comps>
+		<size>(1,1)</size>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Misc</designationCategory>
+	</ThingDef>
 </Defs>

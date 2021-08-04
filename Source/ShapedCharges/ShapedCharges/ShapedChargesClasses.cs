@@ -10,6 +10,10 @@ using UnityEngine;
 
 namespace ShapedCharges
 {
+    //public class CompProperties_DirectedExplosive : CompProperties_Explosive
+    //{
+    //    //public override 
+    //}
     public class Projectile_DirectedExplosive : Projectile_Explosive
     {
         protected virtual void Explode(IntVec3 vector)

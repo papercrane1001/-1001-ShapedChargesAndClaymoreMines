@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building_ShapedCharge.cs" />
+    <Compile Include="CompDirectedExplosive.cs" />
     <Compile Include="MyExplosion.cs" />
     <Compile Include="MyExtensions.cs" />
     <Compile Include="ShapedChargesClasses.cs" />
