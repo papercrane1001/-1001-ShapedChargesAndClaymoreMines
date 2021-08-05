@@ -56,6 +56,8 @@
     <Compile Include="Building_ShapedCharge.cs" />
     <Compile Include="CompDirectedExplosive.cs" />
     <Compile Include="CompProperties_DirectedExplosive.cs" />
+    <Compile Include="CompProperties_TripFuse.cs" />
+    <Compile Include="CompTripFuse.cs" />
     <Compile Include="MyExplosion.cs" />
     <Compile Include="ShapedChargesClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
