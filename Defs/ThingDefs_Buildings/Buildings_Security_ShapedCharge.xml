@@ -27,7 +27,7 @@
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>An explosive shaped to blast in only one direction.</description>
+		<description>An explosive shaped to blast in only one direction.  Front towards enemy!</description>
 		<comps>
 			<li Class="ShapedCharges.CompProperties_DirectedExplosive">
 				<explosiveRadius>10.9</explosiveRadius>
@@ -37,6 +37,7 @@
 		<size>(1,1)</size>
 		<costList>
 			<Steel>100</Steel>
+			<Chemfuel>150</Chemfuel>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Misc</designationCategory>
