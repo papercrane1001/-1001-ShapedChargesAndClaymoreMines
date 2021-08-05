@@ -89,6 +89,12 @@ namespace ShapedCharges
                 }
                 return false;
             }, 25, RegionType.Set_Passable);
+
+
+            for(int i = 0; i < cellsToAffect.Count; ++i)
+            {
+                Log.Message(cellsToAffect[i].x.ToString() + " " + cellsToAffect[i].z.ToString());
+            }
         }
 
         // Token: 0x060017D4 RID: 6100 RVA: 0x0008F020 File Offset: 0x0008D220

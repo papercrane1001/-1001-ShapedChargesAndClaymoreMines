@@ -26,10 +26,10 @@ namespace ShapedCharges
 
         protected void Command_Detonate()
         {
-
+            Log.Message(this.Rotation.AsVector2.x.ToString() + " " + this.Rotation.AsVector2.y.ToString());
             Log.Message("Point4");
             //GetComp<CompDirectedExplosive>().StartWick();
-            GetComp<CompDirectedExplosive>().Detonaate(Map);
+            GetComp<CompDirectedExplosive>().Detonaate(new IntVec3((int)this.Rotation.AsVector2.x, 0, (int)this.Rotation.AsVector2.y), Map);
             //Log.Message("Point1");
         }
 

@@ -1,0 +1,26 @@
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Verse.GenSpawn.Spawn (Verse.Thing newThing, Verse.IntVec3 loc, Verse.Map map, Verse.Rot4 rot, Verse.WipeMode wipeMode, System.Boolean respawningAfterLoad) [0x0006a] in <1b9c4c73530448bcbb33283e1d4d7d05>:0 
+  at Verse.GenSpawn.Spawn (Verse.Thing newThing, Verse.IntVec3 loc, Verse.Map map, Verse.WipeMode wipeMode) [0x00008] in <1b9c4c73530448bcbb33283e1d4d7d05>:0 
+  at ShapedCharges.GenDirectedExplosion.DoExplosion (Verse.IntVec3 vector, Verse.IntVec3 center, Verse.Map map, System.Single radius, Verse.DamageDef damType, Verse.Thing instigator, System.Int32 damAmount, System.Single armorPenetration, Verse.SoundDef explosionSound, Verse.ThingDef weapon, Verse.ThingDef projectile, Verse.Thing intendedTarget, Verse.ThingDef postExplosionSpawnThingDef, System.Single postExplosionSpawnChance, System.Int32 postExplosionSpawnThingCount, System.Boolean applyDamageToExplosionCellsNeighbors, Verse.ThingDef preExplosionSpawnThingDef, System.Single preExplosionSpawnChance, System.Int32 preExplosionSpawnThingCount, System.Single chanceToStartFire, System.Boolean damageFalloff, System.Nullable`1[T] direction, System.Collections.Generic.List`1[T] ignoredThings) [0x0009d] in <bcdf84d2678248eeaefa8ed5340e39b5>:0 
+  at ShapedCharges.CompDirectedExplosive.Detonaate (Verse.Map map, System.Boolean ignoreUnspawned) [0x00176] in <bcdf84d2678248eeaefa8ed5340e39b5>:0 
+  at ShapedCharges.Building_ShapedCharge.Command_Detonate () [0x00018] in <bcdf84d2678248eeaefa8ed5340e39b5>:0 
+  at Verse.Command_Action.ProcessInput (UnityEngine.Event ev) [0x00007] in <1b9c4c73530448bcbb33283e1d4d7d05>:0 
+  at Verse.GizmoGridDrawer.DrawGizmoGrid (System.Collections.Generic.IEnumerable`1[T] gizmos, System.Single startX, Verse.Gizmo& mouseoverGizmo, System.Func`2[T,TResult] customActivatorFunc, System.Func`2[T,TResult] highlightFunc, System.Func`2[T,TResult] lowlightFunc) [0x006a6] in <1b9c4c73530448bcbb33283e1d4d7d05>:0 
+  at RimWorld.InspectGizmoGrid.DrawInspectGizmoGridFor (System.Collections.Generic.IEnumerable`1[T] selectedObjects, Verse.Gizmo& mouseoverGizmo) [0x00244] in <1b9c4c73530448bcbb33283e1d4d7d05>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+RimWorld.InspectGizmoGrid:DrawInspectGizmoGridFor (System.Collections.Generic.IEnumerable`1<object>,Verse.Gizmo&)
+RimWorld.MainTabWindow_Inspect:DrawInspectGizmos ()
+RimWorld.InspectPaneUtility:ExtraOnGUI (RimWorld.IInspectPane)
+RimWorld.MainTabWindow_Inspect:ExtraOnGUI ()
+Verse.WindowStack:WindowStackOnGUI ()
+RimWorld.UIRoot_Play:UIRootOnGUI ()
+(wrapper dynamic-method) Verse.Root:Verse.Root.OnGUI_Patch1 (Verse.Root)
+
+
+
+
+
+
+You'll probably need to use ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial) and then use ClosestThingReachable's validator parameter to narrow it down further
