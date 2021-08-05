@@ -10,15 +10,10 @@ using UnityEngine;
 
 namespace ShapedCharges
 {
-    //public class CompProperties_DirectedExplosive : CompProperties_Explosive
-    //{
-    //    //public override 
-    //}
     public class Projectile_DirectedExplosive : Projectile_Explosive
     {
         protected virtual void Explode(IntVec3 vector)
         {
-            //base.Explode();
             Map map = base.Map;
             this.Destroy(DestroyMode.Vanish);
             if (this.def.projectile.explosionEffect != null)
@@ -82,25 +77,9 @@ namespace ShapedCharges
             {
                 armorPenetration = (float)damAmount * 0.015f;
             }
-            //ThingMaker.MakeThing(new ThingDef())
-            ThingDef def = new ThingDef();
-            //def.
-            //Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map, WipeMode.Vanish);
-            //MyExplosion myExplosion = (MyExplosion)GenSpawn.Spawn(
-            //new ThingDef()
-            //MyExplosion explosion CloneAnd
-            //MyExplosion myExplosion = ()
-            Log.Message("line93");
             MyExplosion test = (MyExplosion)Activator.CreateInstance(typeof(MyExplosion));
-            Log.Message("line94");
             test.def = ThingDefOf.Explosion;
-            
-            //Log.Message(test.def.ToString());
-            Log.Message("line95");
             MyExplosion explosion = (MyExplosion)GenSpawn.Spawn(test, center, map, WipeMode.Vanish);
-            Log.Message("line97");
-
-
             
             IntVec3? needLOSToCell = null;
             IntVec3? needLOSToCell2 = null;
@@ -197,24 +176,13 @@ namespace ShapedCharges
         }
     }
 
-    //public class DirectedExplosion : Explosion
-    //{
-    //    public virtual void StartExplosion(IntVec3 vector, SoundDef explosionSound, List<Thing> ignoredThings)
-    //    {
-    //        base.StartExplosion(explosionSound, ignoredThings);
-    //    }
-    //}
-
     public class DirectedExplosion_DamageWorker : DamageWorker
     {
         public static IEnumerable<IntVec3> DirectionalExplosionCellsToHit(IntVec3 vector, IntVec3 center, Map map, float radius,
             IntVec3? needLOSToCell1 = null, IntVec3? needLOSToCell2 = null)
         {
-            Log.Message("Point3");
             List<IntVec3> myOpenCells = new List<IntVec3>(); //note: openCells is private
             List<IntVec3> myadjWallCells = new List<IntVec3>();
-            //IntVec3 test = new IntVec3(0, 0, 0);
-            //test.RotatedBy(new Rot4())
             List<IntVec3> pattern = TriangularPattern(radius, vector);
             for(int i = 0; i < pattern.Count; ++i)
             {
@@ -254,9 +222,6 @@ namespace ShapedCharges
 
             return myOpenCells.Concat(myadjWallCells);
         }
-
-
-
         public virtual IntVec3 XZTranspose(IntVec3 vecIn)
         {
             return new IntVec3(vecIn.z, vecIn.y, vecIn.x);

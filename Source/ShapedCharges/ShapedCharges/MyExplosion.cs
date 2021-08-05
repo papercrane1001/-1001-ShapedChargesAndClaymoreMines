@@ -13,11 +13,6 @@ namespace ShapedCharges
 {
 	public class MyExplosion : Explosion
 	{
-        //public MyExplosion()
-        //{
-            
-        //}
-
         // Token: 0x060017D1 RID: 6097 RVA: 0x0008EE30 File Offset: 0x0008D030
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -61,22 +56,12 @@ namespace ShapedCharges
             this.cellsToAffect.Clear();
             this.damagedThings.Clear();
             this.addedCellsAffectedOnlyByDamage.Clear();
-            //this.cellsToAffect.AddRange(this.damType.Worker.ExplosionCellsToHit(this));
-
             this.cellsToAffect.AddRange(
                 DirectedExplosion_DamageWorker.DirectionalExplosionCellsToHit(vector, Position, Map, radius, needLOSToCell1, needLOSToCell2));
-            Log.Message("Point2");
-            //if (this.applyDamageToExplosionCellsNeighbors)
-            //{
-            //    this.AddCellsNeighbors(this.cellsToAffect);
-            //}
             this.damType.Worker.ExplosionStart(this, this.cellsToAffect);
-            Log.Message("Point74");
             this.PlayExplosionSound(explosionSound);
             FleckMaker.WaterSplash(base.Position.ToVector3Shifted(), base.Map, this.radius * 6f, 20f);
-            Log.Message("Point77");
             this.cellsToAffect.Sort((IntVec3 a, IntVec3 b) => this.GetCellAffectTick(b).CompareTo(this.GetCellAffectTick(a)));
-            Log.Message("Point79");
             RegionTraverser.BreadthFirstTraverse(base.Position, base.Map, (Region from, Region to) => true, delegate (Region x)
             {
                 List<Thing> allThings = x.ListerThings.AllThings;
@@ -89,12 +74,6 @@ namespace ShapedCharges
                 }
                 return false;
             }, 25, RegionType.Set_Passable);
-
-
-            for(int i = 0; i < cellsToAffect.Count; ++i)
-            {
-                Log.Message(cellsToAffect[i].x.ToString() + " " + cellsToAffect[i].z.ToString());
-            }
         }
 
         // Token: 0x060017D4 RID: 6100 RVA: 0x0008F020 File Offset: 0x0008D220
@@ -265,7 +244,6 @@ namespace ShapedCharges
         private void AddCellsNeighbors(List<IntVec3> cells)
         {
             List<IntVec3> tmp = new List<IntVec3>();
-            //Explosion.tmpCells.Clear();
             this.addedCellsAffectedOnlyByDamage.Clear();
             for (int i = 0; i < cells.Count; i++)
             {
