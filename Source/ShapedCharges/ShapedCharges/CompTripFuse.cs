@@ -37,7 +37,6 @@ namespace ShapedCharges
             IntVec3 vec = this.parent.Position;
 
             IntVec3 orientation = new IntVec3((int)this.parent.Rotation.AsVector2.x, 0, (int)this.parent.Rotation.AsVector2.y);
-            //Log.Message(parent.Rotation.AsVector2.x.ToString() + " " + parent.Rotation.AsVector2.y.ToString());
             vec += orientation;
             int rangeCounter = 0;
             while(rangeCounter++ < Props.radius && vec.GetEdifice(this.parent.Map) == null)
@@ -45,6 +44,7 @@ namespace ShapedCharges
                 if(vec.GetFirstPawn(this.parent.Map) != null)
                 {
                     ((CompDirectedExplosive)this.parent.GetComp<CompDirectedExplosive>()).Detonaate(orientation, this.parent.Map);
+                    break;
                 }
                 vec += orientation;
             }
