@@ -58,6 +58,11 @@ namespace ShapedCharges
             this.addedCellsAffectedOnlyByDamage.Clear();
             this.cellsToAffect.AddRange(
                 DirectedExplosion_DamageWorker.DirectionalExplosionCellsToHit(vector, Position, Map, radius, needLOSToCell1, needLOSToCell2));
+            
+            if (this.applyDamageToExplosionCellsNeighbors)
+            {
+                this.AddCellsNeighbors(this.cellsToAffect);
+            }
             this.damType.Worker.ExplosionStart(this, this.cellsToAffect);
             this.PlayExplosionSound(explosionSound);
             FleckMaker.WaterSplash(base.Position.ToVector3Shifted(), base.Map, this.radius * 6f, 20f);

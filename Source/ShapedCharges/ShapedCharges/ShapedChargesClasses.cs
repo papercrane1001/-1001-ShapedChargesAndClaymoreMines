@@ -57,7 +57,6 @@ namespace ShapedCharges
             ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1, 
             float chanceToStartFire = 0f, bool damageFalloff = false, float? direction = null, List<Thing> ignoredThings = null)
         {
-            Log.Message("Point1");
             if (map == null)
             {
                 Log.Warning("Tried to do explosion in a null map.");
@@ -77,10 +76,16 @@ namespace ShapedCharges
             {
                 armorPenetration = (float)damAmount * 0.015f;
             }
+
+
+
             MyExplosion test = (MyExplosion)Activator.CreateInstance(typeof(MyExplosion));
             test.def = ThingDefOf.Explosion;
+
             MyExplosion explosion = (MyExplosion)GenSpawn.Spawn(test, center, map, WipeMode.Vanish);
             
+
+
             IntVec3? needLOSToCell = null;
             IntVec3? needLOSToCell2 = null;
             if (direction != null)

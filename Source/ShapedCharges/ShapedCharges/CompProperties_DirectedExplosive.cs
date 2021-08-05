@@ -15,6 +15,8 @@ namespace ShapedCharges
         public CompProperties_DirectedExplosive()
         {
             this.compClass = typeof(CompDirectedExplosive);
+            //this.explosiveDamageType = DamageDefOf.Bomb;
+            //this.damageAmountBase = 100;
         }
     }
 }

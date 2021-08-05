@@ -33,6 +33,9 @@
 				<explosiveRadius>10.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
 			</li>
+			<li Class="ShapedCharges.CompProperties_TripFuse">
+				<radius>5</radius>
+			</li>
 		</comps>
 		<size>(1,1)</size>
 		<costList>
