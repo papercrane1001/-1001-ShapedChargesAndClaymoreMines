@@ -63,7 +63,11 @@ namespace ShapedCharges
             {
                 this.AddCellsNeighbors(this.cellsToAffect);
             }
+
+
             this.damType.Worker.ExplosionStart(this, this.cellsToAffect);
+
+
             this.PlayExplosionSound(explosionSound);
             FleckMaker.WaterSplash(base.Position.ToVector3Shifted(), base.Map, this.radius * 6f, 20f);
             this.cellsToAffect.Sort((IntVec3 a, IntVec3 b) => this.GetCellAffectTick(b).CompareTo(this.GetCellAffectTick(a)));
@@ -192,7 +196,28 @@ namespace ShapedCharges
             {
                 this.TrySpawnExplosionThing(this.preExplosionSpawnThingDef, c, this.preExplosionSpawnThingCount);
             }
-            this.damType.Worker.ExplosionAffectCell(this, c, this.damagedThings, this.ignoredThings, !flag);
+            //Log.Message(damagedThings.Count.ToString());
+            //Log.Message(((Explosion)this).GetDamageAmountAt(Position).ToString());
+            //Log.Message((this).GetDamageAmountAt(Position).ToString());
+
+
+
+
+
+            //Explosion tempExplosion = new Explosion() { Position = this.Position, radius = this.radius,
+            //damAmount = this.damAmount, armorPenetration = this.armorPenetration};
+            Explosion tempExplosion = (Explosion)this;
+            tempExplosion.damAmount = this.damAmount;
+            tempExplosion.armorPenetration = this.armorPenetration;
+
+            this.damType.Worker.ExplosionAffectCell(tempExplosion, c, this.damagedThings, this.ignoredThings, !flag);
+            
+            
+            
+            
+            
+            
+            //Log.Message(damagedThings.Count.ToString());
             if (!flag && Rand.Chance(this.postExplosionSpawnChance) && c.Walkable(base.Map))
             {
                 this.TrySpawnExplosionThing(this.postExplosionSpawnThingDef, c, this.postExplosionSpawnThingCount);
