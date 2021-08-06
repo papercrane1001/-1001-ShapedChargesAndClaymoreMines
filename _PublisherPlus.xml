@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Excluded>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\.git</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\new 1.txt</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Source</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Textures\PrepFiles</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[1001]ShapedChargesAndClaymoreMines\Textures\Things\Building\ShapedCharge.png~</exclude>
+  </Excluded>
+</Configuration>
