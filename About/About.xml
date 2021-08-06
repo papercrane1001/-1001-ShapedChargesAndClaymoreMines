@@ -7,12 +7,19 @@
 		<li>1.3</li>
 	</supportedVersions>
 	<description>This mod makes things go boom in a controlled way.  
-	Want to mine out an area, but a bedroom is right on the other side of the wall?  No problem.  Set up a directional shaped charge, and the blast will only be in one direction.  
+	Want to blow up your enemies but not damage your wall?  No problem.  Set up a directional shaped charge, and the blast will only be in one direction.  
 	Shaped charges can be set off manually via the "Detonate" button, but they do set up an invisible tripwire.  This tripwire does not care what sort of creature disturbs it.  
 	Front towards enemy.  
 	Do not stand in front of the claymore.  
 	Do NOT stand in front of the claymore.  
 	DO NOT STAND IN FRONT OF THE CLAYMORE.
+	
+	Requires the IEDs research.  
+	
+	Future plans:
+	Red line to show cells where the laser tripwire is active.
+	Cannons?  It seems like it would make sense for a cannon's shell to mostly explode forward.
+	A mining charge.
 	
 	Like my mod?  Donate at:
 	https://ko-fi.com/papercrane1001

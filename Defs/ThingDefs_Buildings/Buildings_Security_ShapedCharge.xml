@@ -13,7 +13,7 @@
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>ShapedCharge</defName>
-		<label>shaped charge</label>
+		<label>claymore</label>
 		<thingClass>ShapedCharges.Building_ShapedCharge</thingClass>
 		<graphicData>
 			<texPath>Things/Building/ShapedCharge</texPath>
@@ -43,6 +43,9 @@
 			<Chemfuel>150</Chemfuel>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Misc</designationCategory>
+		<designationCategory>Security</designationCategory>
+		<researchPrerequisites>
+			<li>IEDs</li>
+		</researchPrerequisites>
 	</ThingDef>
 </Defs>
